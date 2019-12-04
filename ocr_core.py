@@ -6,8 +6,8 @@ import pytesseract
 import regex as rx
 import validation as vd
 import pars as pr
-pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
-
+# pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
+pytesseract.pytesseract.tesseract_cmd ='/.apt/usr/share/tesseract-ocr/4.00/tessdata'
 def ocr_core(filename):
     """
     This function will handle the core OCR processing of images.
