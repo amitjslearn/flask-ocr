@@ -22,7 +22,7 @@ def allowed_file(filename):
 #     return render_template('index.html')
 
 
-@app.route('/upload', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def upload_page():
     if request.method == 'POST':
         # check if the post request has the file part
