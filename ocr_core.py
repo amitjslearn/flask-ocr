@@ -6,6 +6,7 @@ import pytesseract
 import regex as rx
 import validation as vd
 import pars as pr
+pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 
 def ocr_core(filename):
     """
