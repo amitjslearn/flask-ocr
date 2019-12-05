@@ -52,7 +52,7 @@ def ocr_date(filename):
 
 # txt = 'DATE AND TIME PAX TABLE\n266 09/12/2012 6:14 PH 6 SZ\nCASHTER :caGHTER\n\nWAITER swarTer\n\nFRENCH FRIES\n\nOPEN Foop\n\nVAT NO\n\nASEATHANK'
 
-print(ocr_date('/home/amit/internship/cv/Receipts/d50224be.jpeg'))
+# print(ocr_date('/home/amit/internship/cv/Receipts/d50224be.jpeg'))
 
 # example: before parse 
 #     ya, ma, da = isValidPat2(rx.isPat2(t222))
