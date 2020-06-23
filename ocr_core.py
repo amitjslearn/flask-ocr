@@ -6,6 +6,7 @@ import pytesseract
 import regex as rx
 import validation as vd
 import pars as pr
+
 # pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 # pytesseract.pytesseract.tesseract_cmd ='/.apt/usr/share/tesseract-ocr/4.00/tessdata'
 def ocr_core(filename):
@@ -48,11 +49,27 @@ def ocr_date(filename):
         yyyymmddd = yyyymmddd if yyyymmddd != None else "null"
         return yyyymmddd
     
-    return "null"
+    return None
 
-# txt = 'DATE AND TIME PAX TABLE\n266 09/12/2012 6:14 PH 6 SZ\nCASHTER :caGHTER\n\nWAITER swarTer\n\nFRENCH FRIES\n\nOPEN Foop\n\nVAT NO\n\nASEATHANK'
 
-# print(ocr_date('/home/amit/internship/cv/Receipts/d50224be.jpeg'))
+if __name__ == "__main__":
 
-# example: before parse 
-#     ya, ma, da = isValidPat2(rx.isPat2(t222))
+    # txt = 'DATE AND TIME PAX TABLE\n266 09/12/2012 6:14 PH 6 SZ\nCASHTER :caGHTER\n\nWAITER swarTer\n\nFRENCH FRIES\n\nOPEN Foop\n\nVAT NO\n\nASEATHANK'
+
+    # print(ocr_date('/home/amit/internship/cv/Receipts/d50224be.jpeg'))
+
+    # example: before parse 
+    #     ya, ma, da = isValidPat2(rx.isPat2(t222))
+    import argparse 
+
+    parser = argparse.ArgumentParser(description='extract the dates from bills')
+    parser.add_argument("-p",'--path',required=True, type=str, help='path to image')
+    # parser.add_argument("-c",'--count',required=False, type=int, default=2000, help='number of images to be downloaded')
+    args = vars(parser.parse_args())
+    path = args['path']
+    date = ocr_date(path)
+
+    if date:
+        print(date)
+    else:
+        print('date not found, try with a clearer image')
