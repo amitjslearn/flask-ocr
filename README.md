@@ -1,3 +1,8 @@
-# flask-ocr
-Deploying the ocr model uisng flask </br>
-The api extracts dates from the images
+# ocr date extractor
+Extracts dates from the images/bills
+
+## Install requirements
+`sh install_requirements.sh`
+
+## usage
+`python ocr_core.py -p path/to/image`
