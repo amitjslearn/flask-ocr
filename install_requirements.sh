@@ -8,3 +8,4 @@ pip install tesseract;
 pip install tesseract-ocr;
 pip install pytesseract;
 pip install python-dateutil==2.8.0;
+pip install opencv-python;

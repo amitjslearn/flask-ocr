@@ -1,11 +1,9 @@
-try:
-    from PIL import Image
-except ImportError:
-    import Image
+import cv2
 import pytesseract
 import regex as rx
 import validation as vd
 import pars as pr
+from pre_process import pre_process
 
 # pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 # pytesseract.pytesseract.tesseract_cmd ='/.apt/usr/share/tesseract-ocr/4.00/tessdata'
@@ -14,7 +12,7 @@ def ocr_core(filename):
     This function will handle the core OCR processing of images.
     """
     # pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
-    text = pytesseract.image_to_string(Image.open(filename))  # We'll use Pillow's Image class to open the image and pytesseract to detect the string in the image
+    text = pytesseract.image_to_string(pre_process(cv2.imread(filename)))  # We'll use Pillow's Image class to open the image and pytesseract to detect the string in the image
     return text
 
 def ocr_date(filename):
