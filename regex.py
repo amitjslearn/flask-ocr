@@ -24,6 +24,8 @@ def isPat1(txt):
     sepDates = {}
     finalDates ={}
     for sep in seps:
+        if sep=='.':
+            sep = '\\'+sep
         pat1 = re.compile(r"\d{1,4}"+sep + r"\d{1,2}" + sep + r"\d{1,4}")  # <- IMP all nums
         found = re.findall(pat1,txt)
         for f in found:
@@ -34,10 +36,12 @@ def isPat1(txt):
     return finalDates
 
 def isPat2(txt):
-    '''alpah nums space -> feb 18-19'''
+    '''alpha nums space -> feb 18-19'''
     sepDates = {}
     finalDates ={}
     for sep in seps:
+        if sep=='.':
+            sep = '\\'+sep
         pat2 = re.compile(r"\w{3} ?\d{1,2}"+sep + r"\d{1,4}")        
         found = re.findall(pat2,txt)
         for f in found:
@@ -52,6 +56,8 @@ def isPat3(txt):
     sepDates = {}
     finalDates ={}
     for sep in seps:
+        if sep=='.':
+            sep = '\\'+sep
         pat3 = re.compile(r"\d{1,2} ?\w{3}"+sep + r"\d{1,4}")        
         found = re.findall(pat3,txt)
         for f in found:
@@ -68,6 +74,8 @@ def isPat4(txt):
     sepDates = {}
     finalDates ={}
     for sep in seps:
+        if sep=='.':
+            sep = '\\'+sep
         pat4 = re.compile(r"\d{1,4}"+sep + r"\w{3}" + sep + r"\d{1,4}")  # <- IMP all nums
         found = re.findall(pat4,txt)
         for f in found:
