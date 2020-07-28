@@ -22,7 +22,7 @@ def parsePat1(ymd):
             yyyymmdd = str(parser.parse(yyyymmdd, yearfirst = True)).split()[0]
         except ValueError as e:
             return "null"
-        # return yyyymmdd
+        return yyyymmdd
 
 def parsePat2(ymd):
     '''input: tuple([y],[m],[d])
@@ -32,7 +32,7 @@ def parsePat2(ymd):
     for y, m, d in zip(ya, ma, da):
         yyyymmdd = '-'.join([y,m,d])
         try:
-            yyyymmdd = str(parser.parse(ymyyyymmddd, yearfirst = True)).split()[0]
+            yyyymmdd = str(parser.parse(yyyymmddd, yearfirst = True)).split()[0]
         except ValueError as e:
             return "null"
         return yyyymmdd
